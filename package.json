@@ -2,10 +2,10 @@
   "name": "goit-js-hw-09",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://RamonSanGabriel.github.io/goit-js-hw-09C",
+  "homepage": "https://RamonSanGabriel.github.io/goit-js-hw-09",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-09C/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "author": "Ramon San Gabriel <jeshero11@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RamonSanGabriel/goit-js-hw-09C/issues"
+    "url": "https://github.com/RamonSanGabriel/goit-js-hw-09/issues"
   },
   "dependencies": {
     "flatpickr": "^4.6.13",
