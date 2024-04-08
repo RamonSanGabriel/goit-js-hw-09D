@@ -1,1 +1,1 @@
-# goit-js-hw-09D
+# goit-js-hw-09
