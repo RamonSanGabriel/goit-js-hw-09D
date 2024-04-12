@@ -4,23 +4,13 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// const date = new Date();
-// const textInput = document.querySelector('input[type="text"]');
-// const dateTimePicker = document.querySelector('input#datetime-picker');
-// const btn = document.querySelector('button[data-start]');
-// const days = document.querySelector('span[data-days]');
-// const hours = document.querySelector('span[data-hours]');
-// const minutes = document.querySelector('span[data-minutes]');
-// const seconds = document.querySelector('span[data-seconds]');
-// let ms = dateTimePicker;
-
 const refs = {
   datetimePicker: document.querySelector('input#datetime-picker'),
   btn: document.querySelector('button[data-start]'),
-  days: document.querySelector('[data-days]'),
-  hours: document.querySelector('[data-hours]'),
-  minutes: document.querySelector('[data-minutes]'),
-  seconds: document.querySelector('[data-seconds]'),
+  days: document.querySelector('span[data-days]'),
+  hours: document.querySelector('span[data-hours]'),
+  minutes: document.querySelector('span[data-minutes]'),
+  seconds: document.querySelector('span[data-seconds]'),
 };
 refs.btn.disabled = true;
 
@@ -35,7 +25,7 @@ const options = {
 
     if (selectedDate < startTime) {
       Notify.failure('Please choose a date in the future');
-      btn.disabled = true;
+      refs.btn.disabled = true;
       return;
     }
     refs.btn.disabled = false;
@@ -59,10 +49,10 @@ const options = {
         const timeDifference = selectedDate - currentTime;
         const { days, hours, minutes, seconds } = convertMs(timeDifference);
 
-        days.textContent = addLeadingZero(days);
-        hours.textContent = addLeadingZero(hours);
-        minutes.textContent = addLeadingZero(minutes);
-        seconds.textContent = addLeadingZero(seconds);
+        refs.days.textContent = addLeadingZero(days);
+        refs.hours.textContent = addLeadingZero(hours);
+        refs.minutes.textContent = addLeadingZero(minutes);
+        refs.seconds.textContent = addLeadingZero(seconds);
       });
     }
   },
