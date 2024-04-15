@@ -13,13 +13,28 @@ form.addEventListener('submit', promiseGenerator);
 function promiseGenerator(e) {
   e.preventDefault();
   let delayValue = Number(delay.value);
+
+  for (let positionValue = 1; positionValue <= amount.value; positionValue++) {
+    createPromise(positionValue, delayValue)
+      .then(({ position, delay }) => {
+        Notify.success(`Fulfilled promise ${position} in ${delay} ms`);
+      })
+      .catch(({ position, delay }) => {
+        Notify.failure(`Rejected promise ${position} in ${delay} ms`);
+      });
+    delayValue += Number(delay.value);
+  }
 }
 
 function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    // Fulfill
-  } else {
-    // Reject
-  }
+  return new Promise((resolve, reject) => {
+    const shouldResolve = Math.random() > 0.3;
+    setTimeout(() => {
+      if (shouldResolve) {
+        resolve({ position, delay });
+      } else {
+        reject({ position, delay });
+      }
+    }, delay);
+  });
 }
