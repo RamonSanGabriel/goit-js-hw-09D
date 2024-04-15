@@ -12,6 +12,7 @@ const refs = {
   minutes: document.querySelector('span[data-minutes]'),
   seconds: document.querySelector('span[data-seconds]'),
 };
+
 refs.btn.disabled = true;
 
 const options = {
